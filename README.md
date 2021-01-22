@@ -109,11 +109,11 @@ Um caso de uso pode chamar objetos na mesma camada (como repositórios de dados)
 
 ## Os 5 princípios do SOLID
 
-# 1 — Single Responsability Principle:
+### 1 — Single Responsability Principle:
 
 Esse princípio parte do conceito de que, cada classe deve ter uma única responsabilidade. Ou seja, se temos uma classe de Cliente, por exemplo, não devemos ter uma função para fazer upload de arquivos. Portanto, nessa classe classe, os únicos métodos existentes devem fazer função única e exclusivamente referente ao Cliente, como por exemplo, cadastro de cliente, verificar status do cliente, informações do cliente, entre outros.
 
-# 2 — Open/Closed Principle:
+### 2 — Open/Closed Principle:
 
 Deve ser capaz de extender a classe pai sem alterar seu funcionamento, ou seja, aberta para extensão, fechada para modificação.
 Na prática, significa que:
@@ -122,17 +122,17 @@ Vamos supor que, o banco irá criar uma conta nova, uma conta platinum com vári
 Porém, fazendo dessa forma, estamos ferindo o princípio do open/closed principle, pois a forma correta de fazer seria:
 Ter uma classe abstrata depósito, e para cada tipo de conta, sua respectiva classe. Dentro da classe de cada tipo de conta, deveríamos ter suas funcionalidades e regras de negócio específicas. Assim, estaríamos extendendo a classe pai depósito, e fazendo as alterações somente na classe filha, sem alterar o funcionamento da classe pai.
 
-# 3 — Liskov Substitution Principle:
+### 3 — Liskov Substitution Principle:
 
 É um princípio que está muito ligado ao Open/Closed Principle.
 Uma subclasse não pode quebrar o comportamento da classe pai, e os objetos da classe filha podem ser usados no lugar dos objetos da classe pai. Ou seja, uma subclasse deve sobrescrever os métodos da classe pai, de tal maneira que não quebre o funcionamento da mesma.
 
-# 4 — Interface Segregation Principle:
+### 4 — Interface Segregation Principle:
 
 Muitas interfaces são melhores do que uma. Não se deve forçar classes a usar métodos que não utilizam.
 Ou seja, criar várias interfaces independentes torna o código mais organizado e facilitará o reuso. Mesmo que existam muitos arquivos de interfaces, ainda sim é melhor do que ter poucas interfaces genéricas e com muitas funcionalidades.
 
-# 5— Dependency Segregation Principle:
+### 5— Dependency Segregation Principle:
 
 Depender de uma abstração e não de uma implementação, não depender de uma classe concreta diretamente no código. Injetar as dependências por meio de interfaces.
 Imaginemos que, temos um projeto, em que existem vários arquivos que instanciam uma classe, e que usam várias funções dessa mesma classe. Porém, por algum motivo, preciso altera o nome da classe e de suas respectivas funções. Nesse caso, seria necessário ir em todos os arquivos e alterar o nome da função e da classe. O que fere o conceito do DSP, pois estaríamos dependendo de uma implementação.
